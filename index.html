@@ -19,310 +19,305 @@
     <script src="./script.js" type="text/javascript" defer></script>
   </head>
   <body>
-    <div class="siteDesc">
-      <h2>딜리헙 표지를 위한 이미지 발췌</h2>
-      <p>
-        소설 작가분들이 딜리헙 표지를 쉽게 만들 수 있으면 좋을 것 같아서 만들었습니다.
-        <br />
-        하다 보니 리디북스의 '이미지로 멋지게 공유하기'와 유사해져서 정사각형 비율을 추가했습니다.
-      </p>
-      <p>PC 화면에 최적화되어 있습니다.</p>
-      <p>
-        이미지 왼쪽에 흰 줄이 생길 경우 브라우저 창 크기를 조절한 후에 다시 저장해보시기 바랍니다.
-      </p>
-      <p class="greyText">
-        *딜리헙은 표지를 포함한 4장 이상의 대표 이미지가 필요합니다.
-        <br />
-        <br />
-      </p>
-    </div>
     <div id="mainContainer">
-      <div id="optionContainer">
-        <div class="optbox2">
-          <span>발췌 크기</span>
-          <label>
-            <input type="radio" name="markType" value="1152" checked />
-            딜리헙
-            <span class="greyText">864x1152px(약 4:5 비율)</span>
-          </label>
-          <label>
-            <input type="radio" name="markType" value="864" />
-            정사각형
-            <span class="greyText">864x864px</span>
-          </label>
+      <div id="sideWrap">
+        <div class="siteDesc">
+          <h1 class="title">딜리헙 표지를 위한 이미지 발췌</h1>
+          <p>
+            리디북스의 '이미지로 멋지게 공유하기'와 유사한 형태로 텍스트를 발췌하여 소설 작가분들이
+            딜리헙 표지를 쉽게 만들 수 있었으면 해서 만들었습니다.
+          </p>
+          <p>PC 화면에 최적화되어 있습니다.</p>
+          <p>
+            이미지 왼쪽에 흰 줄이 생길 경우 브라우저 창 크기를 조절한 후에 다시 저장해보시기
+            바랍니다.
+          </p>
+          <p class="redText">※주의: 새로고침하면 초기화됩니다!※</p>
+          <p class="greyText">*딜리헙은 표지를 포함한 4장 이상의 대표 이미지가 필요합니다.</p>
         </div>
-        <div class="optbox2">
-          <span>문자 정렬</span>
-          <label>
-            <input type="radio" name="textAlign" value="left" checked />
-            왼쪽
-          </label>
-          <label>
-            <input type="radio" name="textAlign" value="center" />
-            가운데
-          </label>
-          <label>
-            <input type="radio" name="textAlign" value="right" />
-            오른쪽
-          </label>
-        </div>
-        <div class="optbox2">
-          <span>수직 정렬</span>
-          <label>
-            <input type="radio" name="textVAlign" value="flex-start" />
-            위
-          </label>
-          <label>
-            <input type="radio" name="textVAlign" value="center" checked />
-            가운데
-          </label>
-          <label>
-            <input type="radio" name="textVAlign" value="flex-end" />
-            아래
-          </label>
-        </div>
-        <div class="optbox2">
-          <span>글자 크기</span>
-          <label>
-            <input type="radio" name="textSize" value="34px" />
-            작게
-          </label>
-          <label>
-            <input type="radio" name="textSize" value="40px" checked />
-            중간
-          </label>
-          <label>
-            <input type="radio" name="textSize" value="52px" />
-            크게
-          </label>
-          <label>
-            <input type="radio" name="textSize" value="72px" />
-            더 크게
-          </label>
-        </div>
-        <div class="optbox2">
-          <span>글자 두께</span>
-          <label>
-            <input type="radio" name="textWeight" value="200" />
-            얇게
-          </label>
-          <label>
-            <input type="radio" name="textWeight" value="400" checked />
-            중간
-          </label>
-          <label>
-            <input type="radio" name="textWeight" value="600" />
-            두껍게
-          </label>
-          <label>
-            <input type="radio" name="textWeight" value="800" />
-            더 두껍게
-          </label>
-        </div>
-        <div class="optbox2">
-          <span>폰트 타입</span>
-          <label>
-            <input
-              type="radio"
-              name="textType"
-              value="serif"
-              checked
-              style="font-family: 'Noto Serif KR'" />
-            명조
-          </label>
-          <label>
-            <input type="radio" name="textType" value="sans" />
-            바탕
-          </label>
-        </div>
-        <div class="optbox2">
-          <span>글자 색상</span>
-          <input type="color" id="textColor" value="#FFFFFF" />
-          <div class="presetbox">
-            <button class="textPreset" data-color="#FFFFFF">　</button>
-            <button class="textPreset" data-color="#000000">　</button>
-          </div>
-        </div>
-        <div class="optbox1">
+
+        <div id="optionContainer">
           <div class="optbox2">
-            <span>배경 색상</span>
+            <span>발췌 크기</span>
             <label>
-              <input type="radio" name="bgType" value="solid" />
-              단색
+              <input type="radio" name="markType" value="1152" checked />
+              딜리헙
+              <span class="greyText">864x1152px(약 4:5 비율)</span>
             </label>
             <label>
-              <input type="radio" name="bgType" value="gradient" checked />
-              그라디언트
-            </label>
-            <label>
-              <input type="radio" name="bgType" value="image" />
-              이미지
+              <input type="radio" name="markType" value="864" />
+              정사각형
+              <span class="greyText">864x864px</span>
             </label>
           </div>
-          <div id="solidOptions" style="display: none">
-            <div class="optboxflex">
-              <input type="color" id="bgColor" value="#00479d" />
-              <div class="presetbox">
-                <button class="preset" data-color="#00479d">　</button>
-                <button class="preset" data-color="#00561f">　</button>
-                <button class="preset" data-color="#a40000">　</button>
-                <button class="preset" data-color="#601986">　</button>
-                <button class="preset" data-color="#7e0043">　</button>
-                <button class="preset" data-color="#6a3906">　</button>
+          <div class="optbox2">
+            <span>문자 정렬</span>
+            <label>
+              <input type="radio" name="textAlign" value="left" checked />
+              왼쪽
+            </label>
+            <label>
+              <input type="radio" name="textAlign" value="center" />
+              가운데
+            </label>
+            <label>
+              <input type="radio" name="textAlign" value="right" />
+              오른쪽
+            </label>
+          </div>
+          <div class="optbox2">
+            <span>수직 정렬</span>
+            <label>
+              <input type="radio" name="textVAlign" value="flex-start" />
+              위
+            </label>
+            <label>
+              <input type="radio" name="textVAlign" value="center" checked />
+              가운데
+            </label>
+            <label>
+              <input type="radio" name="textVAlign" value="flex-end" />
+              아래
+            </label>
+          </div>
+          <div class="optbox2">
+            <span>글자 크기</span>
+            <label>
+              <input type="radio" name="textSize" value="34px" />
+              작게
+            </label>
+            <label>
+              <input type="radio" name="textSize" value="40px" checked />
+              중간
+            </label>
+            <label>
+              <input type="radio" name="textSize" value="52px" />
+              크게
+            </label>
+            <label>
+              <input type="radio" name="textSize" value="72px" />
+              더 크게
+            </label>
+          </div>
+          <div class="optbox2">
+            <span>글자 두께</span>
+            <label>
+              <input type="radio" name="textWeight" value="200" />
+              얇게
+            </label>
+            <label>
+              <input type="radio" name="textWeight" value="400" checked />
+              중간
+            </label>
+            <label>
+              <input type="radio" name="textWeight" value="600" />
+              두껍게
+            </label>
+            <label>
+              <input type="radio" name="textWeight" value="800" />
+              더 두껍게
+            </label>
+          </div>
+          <div class="optbox2">
+            <span>폰트 타입</span>
+            <label style="font-family: 'Noto Serif KR'">
+              <input type="radio" name="textType" value="serif" checked />
+              명조
+            </label>
+            <label>
+              <input type="radio" name="textType" value="sans" />
+              바탕
+            </label>
+          </div>
+          <div class="optbox2">
+            <span>글자 색상</span>
+            <input type="color" id="textColor" value="#FFFFFF" />
+            <div class="presetbox">
+              <button class="textPreset" data-color="#FFFFFF">　</button>
+              <button class="textPreset" data-color="#000000">　</button>
+            </div>
+          </div>
+          <div class="optbox1">
+            <div class="optbox2">
+              <span>배경 색상</span>
+              <label>
+                <input type="radio" name="bgType" value="solid" />
+                단색
+              </label>
+              <label>
+                <input type="radio" name="bgType" value="gradient" checked />
+                그라디언트
+              </label>
+              <label>
+                <input type="radio" name="bgType" value="image" />
+                이미지
+              </label>
+            </div>
+            <div id="solidOptions" style="display: none">
+              <div class="optboxflex">
+                <input type="color" id="bgColor" value="#00479d" />
+                <div class="presetbox">
+                  <button class="preset" data-color="#00479d">　</button>
+                  <button class="preset" data-color="#00561f">　</button>
+                  <button class="preset" data-color="#a40000">　</button>
+                  <button class="preset" data-color="#601986">　</button>
+                  <button class="preset" data-color="#7e0043">　</button>
+                  <button class="preset" data-color="#6a3906">　</button>
 
-                <button class="preset" data-color="#68b3e7">　</button>
-                <button class="preset" data-color="#13b5b1">　</button>
-                <button class="preset" data-color="#32b16c">　</button>
-                <button class="preset" data-color="#8fc31f">　</button>
-                <button class="preset" data-color="#fff45c">　</button>
+                  <button class="preset" data-color="#68b3e7">　</button>
+                  <button class="preset" data-color="#13b5b1">　</button>
+                  <button class="preset" data-color="#32b16c">　</button>
+                  <button class="preset" data-color="#8fc31f">　</button>
+                  <button class="preset" data-color="#fff45c">　</button>
 
-                <button class="preset" data-color="#f39800">　</button>
-                <button class="preset" data-color="#eb6877">　</button>
-                <button class="preset" data-color="#ea68a2">　</button>
-                <button class="preset" data-color="#c490bf">　</button>
-                <button class="preset" data-color="#aa89bd">　</button>
+                  <button class="preset" data-color="#f39800">　</button>
+                  <button class="preset" data-color="#eb6877">　</button>
+                  <button class="preset" data-color="#ea68a2">　</button>
+                  <button class="preset" data-color="#c490bf">　</button>
+                  <button class="preset" data-color="#aa89bd">　</button>
 
-                <button class="preset" data-color="#7ecef4">　</button>
-                <button class="preset" data-color="#acd598">　</button>
-                <button class="preset" data-color="#f29c9f">　</button>
-                <button class="preset" data-color="#f19ec2">　</button>
-                <button class="preset" data-color="#f29b76">　</button>
-                <button class="preset" data-color="#a6937c">　</button>
+                  <button class="preset" data-color="#7ecef4">　</button>
+                  <button class="preset" data-color="#acd598">　</button>
+                  <button class="preset" data-color="#f29c9f">　</button>
+                  <button class="preset" data-color="#f19ec2">　</button>
+                  <button class="preset" data-color="#f29b76">　</button>
+                  <button class="preset" data-color="#a6937c">　</button>
 
-                <button class="preset" data-color="#d1c0a5">　</button>
-                <button class="preset" data-color="#b7aa00">　</button>
-                <button class="preset" data-color="#00d7a2">　</button>
-                <button class="preset" data-color="#85f8dc">　</button>
-                <button class="preset" data-color="#fff799">　</button>
+                  <button class="preset" data-color="#d1c0a5">　</button>
+                  <button class="preset" data-color="#b7aa00">　</button>
+                  <button class="preset" data-color="#00d7a2">　</button>
+                  <button class="preset" data-color="#85f8dc">　</button>
+                  <button class="preset" data-color="#fff799">　</button>
 
-                <button class="preset" data-color="#f6f6f6">　</button>
-                <button class="preset" data-color="#dcdcdc">　</button>
-                <button class="preset" data-color="#a0a0a0">　</button>
-                <button class="preset" data-color="#7d7d7d">　</button>
-                <button class="preset" data-color="#535353">　</button>
-                <button class="preset" data-color="#1b1b1b">　</button>
+                  <button class="preset" data-color="#f6f6f6">　</button>
+                  <button class="preset" data-color="#dcdcdc">　</button>
+                  <button class="preset" data-color="#a0a0a0">　</button>
+                  <button class="preset" data-color="#7d7d7d">　</button>
+                  <button class="preset" data-color="#535353">　</button>
+                  <button class="preset" data-color="#1b1b1b">　</button>
 
-                <button class="preset" data-color="#996c33">　</button>
-                <button class="preset" data-color="#59493f">　</button>
-                <button class="preset" data-color="#362e2b">　</button>
+                  <button class="preset" data-color="#996c33">　</button>
+                  <button class="preset" data-color="#59493f">　</button>
+                  <button class="preset" data-color="#362e2b">　</button>
+                </div>
+              </div>
+            </div>
+            <div id="gradientOptions">
+              <div class="optboxflex">
+                <input type="color" id="gradColor1" value="#425389" />
+                <span>-</span>
+                <input type="color" id="gradColor2" value="#32b7b6" />
+                <button id="reverseGradient">색 뒤집기</button>
+                <div class="presetbox">
+                  <button class="gradientPreset" data-colors="#425389,#32b7b6">　</button>
+                  <button class="gradientPreset" data-colors="#db8ade,#f6bf9f">　</button>
+                  <button class="gradientPreset" data-colors="#55cc7c,#f5f97f">　</button>
+                  <button class="gradientPreset" data-colors="#ff544f,#fad126">　</button>
+                  <button class="gradientPreset" data-colors="#51127f,#d70a84">　</button>
+                  <button class="gradientPreset" data-colors="#68217a,#009e49">　</button>
+                  <button class="gradientPreset" data-colors="#6a4cff,#fac120">　</button>
+                  <button class="gradientPreset" data-colors="#4145c5,#fac4aa">　</button>
+                  <button class="gradientPreset" data-colors="#8da4d0,#f8cacc">　</button>
+                  <button class="gradientPreset" data-colors="#ebb2ff,#bbf3ff">　</button>
+                  <button class="gradientPreset" data-colors="#4be6cf,#d4f8ae">　</button>
+                  <button class="gradientPreset" data-colors="#ff849c,#ffce9f">　</button>
+                  <button class="gradientPreset" data-colors="#db2763,#b0db43">　</button>
+                  <button class="gradientPreset" data-colors="#e90b44,#a2e4f4">　</button>
+                  <button class="gradientPreset" data-colors="#0568bd,#f9f323">　</button>
+                  <button class="gradientPreset" data-colors="#93a5cf,#b4ece9">　</button>
+                  <button class="gradientPreset" data-colors="#7683d9,#d8a0fe">　</button>
+                  <button class="gradientPreset" data-colors="#505250,#cbd3c1">　</button>
+                  <button class="gradientPreset" data-colors="#7fb7be,#d2f3ee">　</button>
+                  <button class="gradientPreset" data-colors="#9e7e6a,#d2ba9f">　</button>
+                  <button class="gradientPreset" data-colors="#91498e,#b93d46">　</button>
+                  <button class="gradientPreset" data-colors="#0c2442,#4f7492">　</button>
+                  <button class="gradientPreset" data-colors="#221738,#3c7055">　</button>
+                  <button class="gradientPreset" data-colors="#1f2d6c,#0d95c5">　</button>
+                </div>
+              </div>
+            </div>
+            <div id="imageOptions" style="display: none">
+              <div class="optboxflex">
+                <div class="imgOptBox">
+                  <input type="file" id="bgImage" accept="image/*" />
+                  <div class="greyText">
+                    *무료 이미지 사이트:
+                    <a
+                      href="https://pixabay.com/ko/photos/search/%ed%92%8d%ea%b2%bd/?content_type=authentic"
+                      target="_blank"
+                      rel="noopener noreferrer nofollow">
+                      Pixabay
+                    </a>
+                    <a
+                      href="https://unsplash.com/ko"
+                      target="_blank"
+                      rel="noopener noreferrer nofollow">
+                      Unsplash
+                    </a>
+                  </div>
+                </div>
+                <div class="imgOptBox">
+                  <div class="optbox2">
+                    <label>
+                      <input type="radio" name="imgAlignH" value="left" checked />
+                      왼쪽
+                    </label>
+                    <label>
+                      <input type="radio" name="imgAlignH" value="center" />
+                      가운데
+                    </label>
+                    <label>
+                      <input type="radio" name="imgAlignH" value="right" />
+                      오른쪽
+                    </label>
+                  </div>
+                  <div class="optbox2">
+                    <label>
+                      <input type="radio" name="imgAlignV" value="top" checked />
+                      위
+                    </label>
+                    <label>
+                      <input type="radio" name="imgAlignV" value="bottom" />
+                      아래
+                    </label>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <div id="gradientOptions">
-            <div class="optboxflex">
-              <input type="color" id="gradColor1" value="#425389" />
-              <span>-</span>
-              <input type="color" id="gradColor2" value="#32b7b6" />
-              <button id="reverseGradient">색 뒤집기</button>
-              <div class="presetbox">
-                <button class="gradientPreset" data-colors="#425389,#32b7b6">　</button>
-                <button class="gradientPreset" data-colors="#db8ade,#f6bf9f">　</button>
-                <button class="gradientPreset" data-colors="#55cc7c,#f5f97f">　</button>
-                <button class="gradientPreset" data-colors="#ff544f,#fad126">　</button>
-                <button class="gradientPreset" data-colors="#51127f,#d70a84">　</button>
-                <button class="gradientPreset" data-colors="#68217a,#009e49">　</button>
-                <button class="gradientPreset" data-colors="#6a4cff,#fac120">　</button>
-                <button class="gradientPreset" data-colors="#4145c5,#fac4aa">　</button>
-                <button class="gradientPreset" data-colors="#8da4d0,#f8cacc">　</button>
-                <button class="gradientPreset" data-colors="#ebb2ff,#bbf3ff">　</button>
-                <button class="gradientPreset" data-colors="#4be6cf,#d4f8ae">　</button>
-                <button class="gradientPreset" data-colors="#ff849c,#ffce9f">　</button>
-                <button class="gradientPreset" data-colors="#db2763,#b0db43">　</button>
-                <button class="gradientPreset" data-colors="#e90b44,#a2e4f4">　</button>
-                <button class="gradientPreset" data-colors="#0568bd,#f9f323">　</button>
-                <button class="gradientPreset" data-colors="#93a5cf,#b4ece9">　</button>
-                <button class="gradientPreset" data-colors="#7683d9,#d8a0fe">　</button>
-                <button class="gradientPreset" data-colors="#505250,#cbd3c1">　</button>
-                <button class="gradientPreset" data-colors="#7fb7be,#d2f3ee">　</button>
-                <button class="gradientPreset" data-colors="#9e7e6a,#d2ba9f">　</button>
-                <button class="gradientPreset" data-colors="#91498e,#b93d46">　</button>
-                <button class="gradientPreset" data-colors="#0c2442,#4f7492">　</button>
-                <button class="gradientPreset" data-colors="#221738,#3c7055">　</button>
-                <button class="gradientPreset" data-colors="#1f2d6c,#0d95c5">　</button>
-              </div>
+          <div class="optbox2">
+            <label>
+              <input type="checkbox" id="addSource1" class="addSourceCB" />
+              출처 1 표시
+            </label>
+            <label>
+              <input type="checkbox" id="addSource2" class="addSourceCB" />
+              출처 2 표시
+            </label>
+          </div>
+          <div class="bottomBox">
+            <div class="saveBtnBox">
+              <button class="saveBtn" id="saveBtnJPG" onclick="saveImageJPG()">
+                JPG 이미지 저장하기
+              </button>
+              <button class="saveBtn" id="saveBtnPNG" onclick="saveImagePNG()">
+                PNG 이미지 저장하기
+              </button>
             </div>
-          </div>
-          <div id="imageOptions" style="display: none">
-            <div class="optboxflex">
-              <div class="imgOptBox">
-                <input type="file" id="bgImage" accept="image/*" />
-                <div class="greyText">
-                  *무료 이미지 사이트:
-                  <a
-                    href="https://pixabay.com/ko/photos/search/%ed%92%8d%ea%b2%bd/?content_type=authentic"
-                    target="_blank"
-                    rel="noopener noreferrer nofollow">
-                    Pixabay
-                  </a>
-                  <a
-                    href="https://unsplash.com/ko"
-                    target="_blank"
-                    rel="noopener noreferrer nofollow">
-                    Unsplash
-                  </a>
-                </div>
-              </div>
-              <div class="imgOptBox">
-                <div class="optbox2">
-                  <label>
-                    <input type="radio" name="imgAlignH" value="left" checked />
-                    왼쪽
-                  </label>
-                  <label>
-                    <input type="radio" name="imgAlignH" value="center" />
-                    가운데
-                  </label>
-                  <label>
-                    <input type="radio" name="imgAlignH" value="right" />
-                    오른쪽
-                  </label>
-                </div>
-                <div class="optbox2">
-                  <label>
-                    <input type="radio" name="imgAlignV" value="top" checked />
-                    위
-                  </label>
-                  <label>
-                    <input type="radio" name="imgAlignV" value="bottom" />
-                    아래
-                  </label>
-                </div>
-              </div>
+            <span>
+              이미지가 화질 저하가 심할 경우 PNG로 저장하십시오.
+              <br />
+              JPG 이미지의 용량이 더 작습니다.
+            </span>
+            <div class="greyText">
+              <br />
+              <a
+                href="https://github.com/kimcyan/excerpt-to-image"
+                target="_blank"
+                rel="noopener noreferrer nofollow">
+                GitHub
+              </a>
             </div>
-          </div>
-        </div>
-        <div class="optbox2">
-          <label>
-            <input type="checkbox" id="addSource1" class="addSourceCB" />
-            출처 1 표시
-          </label>
-          <label>
-            <input type="checkbox" id="addSource2" class="addSourceCB" />
-            출처 2 표시
-          </label>
-        </div>
-        <div class="bottomBox">
-          <div class="saveBtnBox">
-            <button class="saveBtn" id="saveBtnJPG" onclick="saveImageJPG()">
-              JPG 이미지 저장하기
-            </button>
-            <button class="saveBtn" id="saveBtnPNG" onclick="saveImagePNG()">
-              PNG 이미지 저장하기
-            </button>
-          </div>
-          <span>
-            이미지가 화질 저하가 심할 경우 PNG로 저장하십시오.
-            <br />
-            JPG 이미지의 용량이 더 작습니다.
-          </span>
-          <div class="greyText">
-            <br />
-            <a
-              href="https://github.com/kimcyan/excerpt-to-image"
-              target="_blank"
-              rel="noopener noreferrer nofollow">
-              GitHub
-            </a>
           </div>
         </div>
       </div>
@@ -338,9 +333,11 @@
               딜리헙은 프로젝트 대표 이미지가 필수면 기본 이미지를 제공하라.
             </div>
             <div id="textSource">
-              <div id="textSource1" contenteditable="true" style="display: none">출처 1</div>
+              <div id="textSource1" contenteditable="true" style="display: none">
+                제목을 쓰면 좋을 위치
+              </div>
               <div id="textSource2" class="textSource" contenteditable="true" style="display: none">
-                출처 2
+                약간 투명한 글씨
               </div>
             </div>
           </div>
