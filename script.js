@@ -61,7 +61,7 @@ function getFormattedTimestamp() {
 //이미지 저장
 function saveImageJPG() {
   window.scrollTo(0, 0);
-  html2canvas(decoratedDiv, {}).then((canvas) => {
+  html2canvas(decoratedDiv, { scale: 4 / 3 }).then((canvas) => {
     const link = document.createElement('a');
     link.download = `bookmark${getFormattedTimestamp()}.jpg`;
     link.href = canvas.toDataURL('image/jpeg');
@@ -70,7 +70,7 @@ function saveImageJPG() {
 }
 function saveImagePNG() {
   window.scrollTo(0, 0);
-  html2canvas(decoratedDiv, {}).then((canvas) => {
+  html2canvas(decoratedDiv, { scale: 4 / 3 }).then((canvas) => {
     const link = document.createElement('a');
     link.download = `bookmark${getFormattedTimestamp()}.png`;
     link.href = canvas.toDataURL('image/png');

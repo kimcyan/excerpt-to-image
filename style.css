@@ -32,24 +32,29 @@ button {
 .title {
   font-size: 18px;
 }
+.capture-wrap {
+  padding-block: 20px;
+}
+.bottomBox {
+  text-align: center;
+  font-size: 16px;
+}
 #capture {
-  width: 864px;
-  height: 1152px;
-  aspect-ratio: 864/1152;
+  width: 648px;
+  height: 864px;
+  aspect-ratio: 3/4;
   overflow: hidden;
-  min-width: 864px;
 }
 #decoratedDiv {
   width: 100%;
   height: 100%;
-  max-width: 864px;
   position: relative;
   display: inline-flex;
   flex-direction: column;
   justify-content: center;
 }
 .textInputBox {
-  padding: 45px 56px;
+  padding: 33px 42px;
 }
 #textInput {
   font-size: 48px;
@@ -63,11 +68,11 @@ button {
 #mainContainer {
   padding: 10px 10px 20px;
   display: flex;
-  flex-direction: row-reverse;
-  align-items: flex-end;
+  flex-direction: row;
+  align-items: flex-start;
   justify-content: center;
   font-size: 18px;
-  min-width: 1600px;
+  min-width: fit-content;
 }
 #optionContainer {
   display: flex;
@@ -76,7 +81,7 @@ button {
   width: 600px;
   min-width: 600px;
   text-align: left;
-  padding: 40px;
+  padding: 28px 40px;
 }
 .optbox2 {
   display: flex;
@@ -162,7 +167,7 @@ button {
   background: transparent;
   font-family: 'Noto Sans KR', serif;
   line-height: 1.7em;
-  font-size: 30px;
+  font-size: 22.5px;
   font-weight: 200;
 }
 #textSource div {
@@ -185,4 +190,17 @@ button {
 }
 .redText {
   color: #e60012;
+}
+.footer-wrap {
+  text-align: center;
+  padding: 0 40px 40px;
+}
+@media screen and (max-width: 1364px) {
+  #mainContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+  #optionContainer {
+    padding-bottom: 0;
+  }
 }
