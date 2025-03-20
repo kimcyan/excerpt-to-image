@@ -40,79 +40,124 @@
       <div id="optionContainer">
         <div class="optbox2">
           <span>발췌 크기</span>
-          <input type="radio" name="markType" value="1152" id="dilly" checked />
-          <label for="dilly">
+          <label>
+            <input type="radio" name="markType" value="1152" checked />
             딜리헙
             <span class="greyText">864x1152px(약 4:5 비율)</span>
           </label>
-          <input type="radio" name="markType" value="864" id="square" />
-          <label for="square">
+          <label>
+            <input type="radio" name="markType" value="864" />
             정사각형
             <span class="greyText">864x864px</span>
           </label>
         </div>
         <div class="optbox2">
           <span>문자 정렬</span>
-          <input type="radio" name="textAlign" value="left" id="left" checked />
-          <label for="left">왼쪽</label>
-          <input type="radio" name="textAlign" value="center" id="hcenter" />
-          <label for="hcenter">가운데</label>
-          <input type="radio" name="textAlign" value="right" id="right" />
-          <label for="right">오른쪽</label>
+          <label>
+            <input type="radio" name="textAlign" value="left" checked />
+            왼쪽
+          </label>
+          <label>
+            <input type="radio" name="textAlign" value="center" />
+            가운데
+          </label>
+          <label>
+            <input type="radio" name="textAlign" value="right" />
+            오른쪽
+          </label>
         </div>
         <div class="optbox2">
           <span>수직 정렬</span>
-          <input type="radio" name="textVAlign" value="flex-start" id="flex-start" />
-          <label for="flex-start">위</label>
-          <input type="radio" name="textVAlign" value="center" id="vcenter" checked />
-          <label for="vcenter">가운데</label>
-          <input type="radio" name="textVAlign" value="flex-end" id="flex-end" />
-          <label for="flex-end">아래</label>
+          <label>
+            <input type="radio" name="textVAlign" value="flex-start" />
+            위
+          </label>
+          <label>
+            <input type="radio" name="textVAlign" value="center" checked />
+            가운데
+          </label>
+          <label>
+            <input type="radio" name="textVAlign" value="flex-end" />
+            아래
+          </label>
         </div>
         <div class="optbox2">
           <span>글자 크기</span>
-          <input type="radio" name="textSize" value="34px" id="smalls" />
-          <label for="smalls">작게</label>
-          <input type="radio" name="textSize" value="40px" id="mediums" checked />
-          <label for="mediums">중간</label>
-          <input type="radio" name="textSize" value="52px" id="bigs" />
-          <label for="bigs">크게</label>
-          <input type="radio" name="textSize" value="72px" id="biggers" />
-          <label for="biggers">더 크게</label>
+          <label>
+            <input type="radio" name="textSize" value="34px" />
+            작게
+          </label>
+          <label>
+            <input type="radio" name="textSize" value="40px" checked />
+            중간
+          </label>
+          <label>
+            <input type="radio" name="textSize" value="52px" />
+            크게
+          </label>
+          <label>
+            <input type="radio" name="textSize" value="72px" />
+            더 크게
+          </label>
         </div>
         <div class="optbox2">
           <span>글자 두께</span>
-          <input type="radio" name="textWeight" value="200" id="lightW" />
-          <label for="lightW">얇게</label>
-          <input type="radio" name="textWeight" value="400" id="mediumW" checked />
-          <label for="mediumW">중간</label>
-          <input type="radio" name="textWeight" value="600" id="boldW" />
-          <label for="boldW">두껍게</label>
-          <input type="radio" name="textWeight" value="800" id="bolderW" />
-          <label for="bolderW">더 두껍게</label>
+          <label>
+            <input type="radio" name="textWeight" value="200" />
+            얇게
+          </label>
+          <label>
+            <input type="radio" name="textWeight" value="400" checked />
+            중간
+          </label>
+          <label>
+            <input type="radio" name="textWeight" value="600" />
+            두껍게
+          </label>
+          <label>
+            <input type="radio" name="textWeight" value="800" />
+            더 두껍게
+          </label>
         </div>
         <div class="optbox2">
           <span>폰트 타입</span>
-          <input type="radio" name="textType" value="serif" id="serif" checked />
-          <label for="serif" style="font-family: 'Noto Serif KR'">명조</label>
-          <input type="radio" name="textType" value="sans" id="sans" />
-          <label for="sans">바탕</label>
+          <label>
+            <input
+              type="radio"
+              name="textType"
+              value="serif"
+              checked
+              style="font-family: 'Noto Serif KR'" />
+            명조
+          </label>
+          <label>
+            <input type="radio" name="textType" value="sans" />
+            바탕
+          </label>
         </div>
         <div class="optbox2">
           <span>글자 색상</span>
           <input type="color" id="textColor" value="#FFFFFF" />
-          <button class="textPreset" data-color="#FFFFFF">　</button>
-          <button class="textPreset" data-color="#000000">　</button>
+          <div class="presetbox">
+            <button class="textPreset" data-color="#FFFFFF">　</button>
+            <button class="textPreset" data-color="#000000">　</button>
+          </div>
         </div>
         <div class="optbox1">
           <div class="optbox2">
             <span>배경 색상</span>
-            <input type="radio" name="bgType" value="solid" id="solid" />
-            <label for="solid">단색</label>
-            <input type="radio" name="bgType" value="gradient" id="gradient" checked />
-            <label for="gradient">그라디언트</label>
-            <input type="radio" name="bgType" value="image" id="image" />
-            <label for="image">이미지</label>
+            <label>
+              <input type="radio" name="bgType" value="solid" />
+              단색
+            </label>
+            <label>
+              <input type="radio" name="bgType" value="gradient" checked />
+              그라디언트
+            </label>
+            <label>
+              <input type="radio" name="bgType" value="image" />
+              이미지
+            </label>
           </div>
           <div id="solidOptions" style="display: none">
             <div class="optboxflex">
@@ -194,35 +239,86 @@
           </div>
           <div id="imageOptions" style="display: none">
             <div class="optboxflex">
-              <input type="file" id="bgImage" accept="image/*" />
-              <input type="radio" name="imgAlignH" value="left" id="imgleft" checked />
-              <label for="imgleft">왼쪽</label>
-              <input type="radio" name="imgAlignH" value="center" id="imgcenter" />
-              <label for="imgcenter">가운데</label>
-              <input type="radio" name="imgAlignH" value="right" id="imgright" />
-              <label for="imgright">오른쪽</label>
-              <input type="radio" name="imgAlignV" value="top" id="imgtop" checked />
-              <label for="imgtop">위</label>
-              <input type="radio" name="imgAlignV" value="bottom" id="imgbottom" />
-              <label for="imgbottom">아래</label>
-            </div>
-            <div class="greyText freeSite">
-              *무료 이미지 사이트:
-              <a
-                href="https://pixabay.com/ko/photos/search/%ed%92%8d%ea%b2%bd/?content_type=authentic"
-                target="_blank"
-                rel="noopener noreferrer nofollow">
-                Pixabay
-              </a>
-              <a href="https://unsplash.com/ko" target="_blank" rel="noopener noreferrer nofollow">
-                Unsplash
-              </a>
+              <div class="imgOptBox">
+                <input type="file" id="bgImage" accept="image/*" />
+                <div class="greyText">
+                  *무료 이미지 사이트:
+                  <a
+                    href="https://pixabay.com/ko/photos/search/%ed%92%8d%ea%b2%bd/?content_type=authentic"
+                    target="_blank"
+                    rel="noopener noreferrer nofollow">
+                    Pixabay
+                  </a>
+                  <a
+                    href="https://unsplash.com/ko"
+                    target="_blank"
+                    rel="noopener noreferrer nofollow">
+                    Unsplash
+                  </a>
+                </div>
+              </div>
+              <div class="imgOptBox">
+                <div class="optbox2">
+                  <label>
+                    <input type="radio" name="imgAlignH" value="left" checked />
+                    왼쪽
+                  </label>
+                  <label>
+                    <input type="radio" name="imgAlignH" value="center" />
+                    가운데
+                  </label>
+                  <label>
+                    <input type="radio" name="imgAlignH" value="right" />
+                    오른쪽
+                  </label>
+                </div>
+                <div class="optbox2">
+                  <label>
+                    <input type="radio" name="imgAlignV" value="top" checked />
+                    위
+                  </label>
+                  <label>
+                    <input type="radio" name="imgAlignV" value="bottom" />
+                    아래
+                  </label>
+                </div>
+              </div>
             </div>
           </div>
         </div>
         <div class="optbox2">
-          <button id="addSourceBtn1" class="addSourceBtn">출처 1 추가</button>
-          <button id="addSourceBtn2" class="addSourceBtn">출처 2 추가</button>
+          <label>
+            <input type="checkbox" id="addSource1" class="addSourceCB" />
+            출처 1 표시
+          </label>
+          <label>
+            <input type="checkbox" id="addSource2" class="addSourceCB" />
+            출처 2 표시
+          </label>
+        </div>
+        <div class="bottomBox">
+          <div class="saveBtnBox">
+            <button class="saveBtn" id="saveBtnJPG" onclick="saveImageJPG()">
+              JPG 이미지 저장하기
+            </button>
+            <button class="saveBtn" id="saveBtnPNG" onclick="saveImagePNG()">
+              PNG 이미지 저장하기
+            </button>
+          </div>
+          <span>
+            이미지가 화질 저하가 심할 경우 PNG로 저장하십시오.
+            <br />
+            JPG 이미지의 용량이 더 작습니다.
+          </span>
+          <div class="greyText">
+            <br />
+            <a
+              href="https://github.com/kimcyan/excerpt-to-image"
+              target="_blank"
+              rel="noopener noreferrer nofollow">
+              GitHub
+            </a>
+          </div>
         </div>
       </div>
       <div id="capture">
@@ -244,28 +340,6 @@
             </div>
           </div>
         </div>
-      </div>
-      <div class="saveBtnBox">
-        <button class="saveBtn" id="saveBtnJPG" onclick="saveImageJPG()">
-          JPG 이미지 저장하기
-        </button>
-        <button class="saveBtn" id="saveBtnPNG" onclick="saveImagePNG()">
-          PNG 이미지 저장하기
-        </button>
-      </div>
-      <span>
-        이미지가 화질 저하가 심할 경우 PNG로 저장하십시오.
-        <br />
-        JPG 이미지의 용량이 더 작습니다.
-      </span>
-      <div class="greyText">
-        <br />
-        <a
-          href="https://github.com/kimcyan/excerpt-to-image"
-          target="_blank"
-          rel="noopener noreferrer nofollow">
-          GitHub
-        </a>
       </div>
     </div>
   </body>

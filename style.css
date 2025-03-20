@@ -6,10 +6,11 @@ body {
   background-color: #f1f1f1;
   color: #121212;
 }
-input[type='radio'] {
+input[type='radio'],
+input[type='checkbox'] {
   width: 1.4em;
   height: 1.4em;
-  margin: 0 0 0 8px;
+  margin: 0;
   cursor: pointer;
 }
 input[type='color'] {
@@ -26,6 +27,7 @@ button {
   height: 1152px;
   aspect-ratio: 864/1152;
   overflow: hidden;
+  min-width: 864px;
 }
 #decoratedDiv {
   width: 100%;
@@ -51,27 +53,43 @@ button {
 #mainContainer {
   padding: 10px 10px 60px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row-reverse;
   align-items: center;
+  justify-content: center;
 }
 #optionContainer {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  width: 864px;
+  gap: 16px;
+  width: 600px;
+  min-width: 600px;
   text-align: left;
-  padding-bottom: 10px;
+  padding: 40px;
 }
 .optbox2 {
   display: flex;
   align-items: center;
-  gap: 2px;
+  gap: 14px;
+}
+.optbox2 label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
 }
 .optboxflex {
-  padding: 10px 10px 0 72px;
+  padding: 10px 10px 10px 72px;
   display: flex;
   gap: 2px;
   align-items: center;
+}
+#solidOptions .optboxflex {
+  gap: 36px;
+}
+.imgOptBox {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 .preset,
 .gradientPreset,
@@ -110,13 +128,14 @@ button {
   border-radius: 4px;
   font-family: 'Noto Sans KR', sans-serif;
   cursor: pointer;
+  max-width: 280px;
 }
 .saveBtn {
   font-size: 18px;
   font-weight: 500;
   padding: 12px 20px;
-  margin: 20px;
-  background-color: #666;
+  margin: 20px 20px 20px 0;
+  background-color: #1774e3;
   border: none;
   color: white;
   border-radius: 4px;
@@ -146,8 +165,4 @@ button {
 }
 .greyText a:hover {
   color: black;
-}
-.freeSite {
-  margin-left: 72px;
-  margin-top: 1px;
 }

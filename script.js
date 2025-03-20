@@ -166,25 +166,11 @@ bgImageInput.addEventListener('change', drawDiv);
 drawDiv();
 
 //출처
-document.getElementById('addSourceBtn1').addEventListener('click', function () {
+document.getElementById('addSource1').addEventListener('change', function () {
   const source1 = document.getElementById('textSource1');
-
-  if (source1.style.display === 'none' || source1.style.display === '') {
-    source1.style.display = 'block';
-    this.textContent = '출처 1 삭제';
-  } else {
-    source1.style.display = 'none';
-    this.textContent = '출처 1 추가';
-  }
+  source1.style.display = this.checked ? 'block' : 'none';
 });
-document.getElementById('addSourceBtn2').addEventListener('click', function () {
+document.getElementById('addSource2').addEventListener('change', function () {
   const source1 = document.getElementById('textSource2');
-
-  if (source1.style.display === 'none' || source1.style.display === '') {
-    source1.style.display = 'block';
-    this.textContent = '출처 2 삭제';
-  } else {
-    source1.style.display = 'none';
-    this.textContent = '출처 2 추가';
-  }
+  source1.style.display = this.checked ? 'block' : 'none';
 });
