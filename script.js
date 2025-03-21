@@ -189,6 +189,7 @@ document.querySelectorAll('.gradientPreset').forEach((button) => {
 });
 // 그라디언트 색 뒤집기
 reverseGradientButton.addEventListener('click', () => {
+  [gradColor1.value, gradColor2.value] = [gradColor2.value, gradColor1.value];
   syncColorInputs(gradColor1, gradColor1Hex, gradColor1.value);
   syncColorInputs(gradColor2, gradColor2Hex, gradColor2.value);
   updateBackground();
