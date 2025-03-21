@@ -9,12 +9,12 @@ const gradColor2 = document.getElementById('gradColor2');
 const reverseGradientButton = document.getElementById('reverseGradient');
 const bgImageInput = document.getElementById('bgImage');
 
-function drawDiv() {
+// 배경 업데이트
+const updateBackground = () => {
   const bgType = document.querySelector('input[name="bgType"]:checked').value;
-  const hAlign = document.querySelector("input[name='imgAlignH']:checked").value;
-  const vAlign = document.querySelector("input[name='imgAlignV']:checked").value;
   decoratedDiv.style.backgroundImage = 'none';
   decoratedDiv.style.backgroundColor = '';
+
   if (bgType === 'solid') {
     decoratedDiv.style.backgroundColor = bgColorInput.value;
   } else if (bgType === 'gradient') {
@@ -27,26 +27,73 @@ function drawDiv() {
       decoratedDiv.style.backgroundPosition = `${hAlign} ${vAlign}`;
     };
   }
-  document.querySelectorAll("input[name='markType']").forEach((radio) => {
-    radio.addEventListener('change', () => {
-      document.getElementById('capture').style.height = `${radio.value}px`;
-    });
-  });
+};
+
+// 글자 업데이트
+const updateTextStyle = () => {
   textInput.style.color = textColorInput.value;
   textSource.style.color = textColorInput.value;
-  textInput.style.textAlign = document.querySelector('input[name="textAlign"]:checked').value;
-  textSource.style.textAlign = document.querySelector('input[name="textAlign"]:checked').value;
-  decoratedDiv.style.justifyContent = document.querySelector(
-    'input[name="textVAlign"]:checked'
-  ).value;
   textInput.style.fontSize = document.querySelector('input[name="textSize"]:checked').value;
   textInput.style.fontWeight = document.querySelector('input[name="textWeight"]:checked').value;
   textInput.style.fontFamily =
     document.querySelector('input[name="textType"]:checked').value === 'sans'
       ? 'Noto Sans KR'
       : 'Noto Serif KR';
-}
-//날짜
+};
+
+// 정렬 업데이트
+const updateTextAlign = () => {
+  textInput.style.textAlign = document.querySelector('input[name="textAlign"]:checked').value;
+  textSource.style.textAlign = document.querySelector('input[name="textAlign"]:checked').value;
+  decoratedDiv.style.justifyContent = document.querySelector(
+    'input[name="textVAlign"]:checked'
+  ).value;
+};
+
+// 이미지 정렬 업데이트
+const updateImageAlign = () => {
+  const hAlign = document.querySelector("input[name='imgAlignH']:checked").value;
+  const vAlign = document.querySelector("input[name='imgAlignV']:checked").value;
+  decoratedDiv.style.backgroundPosition = `${hAlign} ${vAlign}`;
+};
+
+// 발췌 비율 업데이트
+const updateCaptureHeight = () => {
+  document.getElementById('capture').style.height =
+    document.querySelector("input[name='markType']:checked").value + 'px';
+};
+
+//이벤트 리스너
+document
+  .querySelectorAll("input[name='bgType']")
+  .forEach((radio) => radio.addEventListener('change', updateBackground));
+document
+  .querySelectorAll("input[name='markType']")
+  .forEach((radio) => radio.addEventListener('change', updateCaptureHeight));
+document
+  .querySelectorAll("input[name='textAlign']")
+  .forEach((radio) => radio.addEventListener('change', updateTextAlign));
+document
+  .querySelectorAll("input[name='textVAlign']")
+  .forEach((radio) => radio.addEventListener('change', updateTextAlign));
+document
+  .querySelectorAll("input[name='textType']")
+  .forEach((radio) => radio.addEventListener('change', updateTextStyle));
+document
+  .querySelectorAll("input[name='textSize']")
+  .forEach((radio) => radio.addEventListener('change', updateTextStyle));
+document
+  .querySelectorAll("input[name='textWeight']")
+  .forEach((radio) => radio.addEventListener('change', updateTextStyle));
+document
+  .querySelectorAll("input[name='imgAlignH']")
+  .forEach((radio) => radio.addEventListener('change', updateImageAlign));
+document
+  .querySelectorAll("input[name='imgAlignV']")
+  .forEach((radio) => radio.addEventListener('change', updateImageAlign));
+bgImageInput.addEventListener('change', updateBackground);
+
+// 이미지 저장 날짜
 function getFormattedTimestamp() {
   const now = new Date();
   const year = now.getFullYear();
@@ -58,7 +105,7 @@ function getFormattedTimestamp() {
 
   return `${year}${month}${day}${hours}${minutes}${seconds}`;
 }
-//이미지 저장
+// 이미지 저장
 function saveImageJPG() {
   window.scrollTo(0, 0);
   html2canvas(decoratedDiv, { scale: 4 / 3 }).then((canvas) => {
@@ -78,92 +125,77 @@ function saveImagePNG() {
   });
 }
 
-//배경 타입 옵션 변경
-document.querySelectorAll("input[name='bgType']").forEach((radio) => {
-  radio.addEventListener('change', () => {
-    document.getElementById('solidOptions').style.display =
-      radio.value === 'solid' ? 'block' : 'none';
-    document.getElementById('gradientOptions').style.display =
-      radio.value === 'gradient' ? 'block' : 'none';
-    document.getElementById('imageOptions').style.display =
-      radio.value === 'image' ? 'block' : 'none';
-    drawDiv();
+// 글자 색상 프리셋 버튼
+document.querySelectorAll('.textPreset').forEach((button) => {
+  button.style.background = button.dataset.color;
+  button.addEventListener('click', () => {
+    textColorInput.value = button.dataset.color;
+    updateTextStyle();
   });
 });
-//단색 프리셋 버튼
+
+// 배경 타입 옵션 변경
+const updateBgOptions = () => {
+  const bgType = document.querySelector("input[name='bgType']:checked").value;
+  document.getElementById('solidOptions').style.display = bgType === 'solid' ? 'block' : 'none';
+  document.getElementById('gradientOptions').style.display =
+    bgType === 'gradient' ? 'block' : 'none';
+  document.getElementById('imageOptions').style.display = bgType === 'image' ? 'block' : 'none';
+  updateBackground();
+};
+document
+  .querySelectorAll("input[name='bgType']")
+  .forEach((radio) => radio.addEventListener('change', updateBgOptions));
+// 단색 프리셋 버튼
 document.querySelectorAll('.preset').forEach((button) => {
   button.style.background = button.dataset.color;
   button.addEventListener('click', () => {
     bgColorInput.value = button.dataset.color;
-    drawDiv();
+    updateBackground();
   });
 });
-//그라디언트 프리셋 버튼
+// 그라디언트 프리셋 버튼
 document.querySelectorAll('.gradientPreset').forEach((button) => {
   const colors = button.dataset.colors.split(',');
   button.style.background = `linear-gradient(to right, ${colors[0]}, ${colors[1]})`;
   button.addEventListener('click', () => {
     gradColor1.value = colors[0];
     gradColor2.value = colors[1];
-    drawDiv();
+    updateBackground();
   });
 });
-//그라디언트 색 뒤집기
+// 그라디언트 색 뒤집기
 reverseGradientButton.addEventListener('click', () => {
   [gradColor1.value, gradColor2.value] = [gradColor2.value, gradColor1.value];
-  drawDiv();
+  updateBackground();
 });
-//글자 색상 프리셋 버튼
-document.querySelectorAll('.textPreset').forEach((button) => {
-  button.style.background = button.dataset.color;
-  button.addEventListener('click', () => {
-    textColorInput.value = button.dataset.color;
-    drawDiv();
+
+// 색상 HEX
+const syncColorInputs = (colorInput, hexInput, newColor) => {
+  colorInput.value = newColor;
+  hexInput.value = newColor.toUpperCase();
+  updateTextStyle();
+  updateBackground();
+};
+document.querySelectorAll('.colorPickBox').forEach((box) => {
+  const colorInput = box.querySelector("input[type='color']");
+  const hexInput = box.querySelector("input[type='text']");
+  hexInput.addEventListener('input', ({ target }) => {
+    if (/^#([0-9A-Fa-f]{6})$/.test(target.value)) {
+      syncColorInputs(colorInput, hexInput, target.value);
+    }
+  });
+  colorInput.addEventListener('input', ({ target }) => {
+    syncColorInputs(colorInput, hexInput, target.value);
   });
 });
 
-document.querySelectorAll("input[name='imgAlignH']").forEach((radio) => {
-  radio.addEventListener('change', () => {
-    drawDiv();
-  });
-});
-document.querySelectorAll("input[name='imgAlignV']").forEach((radio) => {
-  radio.addEventListener('change', () => {
-    drawDiv();
-  });
-});
-document.querySelectorAll("input[name='textAlign']").forEach((radio) => {
-  radio.addEventListener('change', () => {
-    drawDiv();
-  });
-});
-document.querySelectorAll("input[name='textVAlign']").forEach((radio) => {
-  radio.addEventListener('change', () => {
-    drawDiv();
-  });
-});
-document.querySelectorAll("input[name='textType']").forEach((radio) => {
-  radio.addEventListener('change', () => {
-    drawDiv();
-  });
-});
-document.querySelectorAll("input[name='textSize']").forEach((radio) => {
-  radio.addEventListener('change', () => {
-    drawDiv();
-  });
-});
-document.querySelectorAll("input[name='textWeight']").forEach((radio) => {
-  radio.addEventListener('change', () => {
-    drawDiv();
-  });
-});
-bgColorInput.addEventListener('input', drawDiv);
-textColorInput.addEventListener('input', drawDiv);
-gradColor1.addEventListener('input', drawDiv);
-gradColor2.addEventListener('input', drawDiv);
-bgImageInput.addEventListener('change', drawDiv);
-
-drawDiv();
+//초기 실행
+updateBackground();
+updateCaptureHeight();
+updateTextStyle();
+updateTextAlign();
+updateImageAlign();
 
 //출처
 document.getElementById('addSource1').addEventListener('change', function () {

@@ -95,13 +95,11 @@ button {
   cursor: pointer;
 }
 .optboxflex {
-  padding: 10px 10px 10px 72px;
+  padding: 12px 10px 10px 84px;
   display: flex;
-  gap: 2px;
-  align-items: center;
-}
-#solidOptions .optboxflex {
-  gap: 36px;
+  gap: 12px;
+  align-items: flex-start;
+  flex-direction: column;
 }
 .imgOptBox {
   display: flex;
@@ -119,24 +117,41 @@ button {
   height: 28px;
   border-radius: 4px;
 }
+.colorPickBox {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid #ccc;
+  padding-block: 8px;
+  border-radius: 8px;
+}
+.colorPickHex {
+  width: 80px;
+  font-size: 18px;
+  font-family: 'Noto Sans KR', sans-serif;
+  padding: 0;
+  border: 0;
+  outline: none;
+  background-color: transparent;
+}
+.gradColorBox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
 .presetbox {
   display: flex;
   flex-wrap: wrap;
   gap: 4px;
 }
-#reverseGradient,
-.addSourceBtn {
-  margin: 0 10px 0 4px;
-  padding: 4px 8px;
+#reverseGradient {
+  padding: 4px 12px;
   font-size: 16px;
-  min-width: 80px;
-  background-color: #666;
-  border: none;
-  color: white;
-  border-radius: 4px;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
 }
-.addSourceBtn {
-  margin: 0 4px 0 0;
+#reverseGradient:hover {
+  background-color: #eee;
 }
 #bgImage {
   padding: 4px 8px;
@@ -155,7 +170,7 @@ button {
   background-color: #1774e3;
   border: none;
   color: white;
-  border-radius: 4px;
+  border-radius: 8px;
 }
 .saveBtn:hover {
   background-color: #1461bd;
