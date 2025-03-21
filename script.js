@@ -2,12 +2,16 @@ const capture = document.getElementById('capture');
 const decoratedDiv = document.getElementById('decoratedDiv');
 const textInput = document.getElementById('textInput');
 const textSource = document.getElementById('textSource');
-const bgColorInput = document.getElementById('bgColor');
-const textColorInput = document.getElementById('textColor');
-const gradColor1 = document.getElementById('gradColor1');
-const gradColor2 = document.getElementById('gradColor2');
 const reverseGradientButton = document.getElementById('reverseGradient');
 const bgImageInput = document.getElementById('bgImage');
+const textColorInput = document.getElementById('textColor');
+const solidColorInput = document.getElementById('solidColor');
+const gradColor1 = document.getElementById('gradColor1');
+const gradColor2 = document.getElementById('gradColor2');
+const textColorHex = document.getElementById('textColorHex');
+const solidColorHex = document.getElementById('solidColorHex');
+const gradColor1Hex = document.getElementById('gradColor1Hex');
+const gradColor2Hex = document.getElementById('gradColor2Hex');
 
 // 배경 업데이트
 const updateBackground = () => {
@@ -16,7 +20,7 @@ const updateBackground = () => {
   decoratedDiv.style.backgroundColor = '';
 
   if (bgType === 'solid') {
-    decoratedDiv.style.backgroundColor = bgColorInput.value;
+    decoratedDiv.style.backgroundColor = solidColorInput.value;
   } else if (bgType === 'gradient') {
     decoratedDiv.style.background = `linear-gradient(45deg, ${gradColor1.value}, ${gradColor2.value})`;
   } else if (bgType === 'image' && bgImageInput.files.length > 0) {
@@ -36,18 +40,14 @@ const updateTextStyle = () => {
   textInput.style.fontSize = document.querySelector('input[name="textSize"]:checked').value;
   textInput.style.fontWeight = document.querySelector('input[name="textWeight"]:checked').value;
   textInput.style.fontFamily =
-    document.querySelector('input[name="textType"]:checked').value === 'sans'
-      ? 'Noto Sans KR'
-      : 'Noto Serif KR';
+    document.querySelector('input[name="textType"]:checked').value === 'sans' ? 'Noto Sans KR' : 'Noto Serif KR';
 };
 
 // 정렬 업데이트
 const updateTextAlign = () => {
   textInput.style.textAlign = document.querySelector('input[name="textAlign"]:checked').value;
   textSource.style.textAlign = document.querySelector('input[name="textAlign"]:checked').value;
-  decoratedDiv.style.justifyContent = document.querySelector(
-    'input[name="textVAlign"]:checked'
-  ).value;
+  decoratedDiv.style.justifyContent = document.querySelector('input[name="textVAlign"]:checked').value;
 };
 
 // 이미지 정렬 업데이트
@@ -125,11 +125,34 @@ function saveImagePNG() {
   });
 }
 
+// 색상 HEX
+const syncColorInputs = (colorInput, hexInput, newColor) => {
+  colorInput.value = newColor;
+  hexInput.value = newColor.toUpperCase();
+};
+document.querySelectorAll('.colorPickBox').forEach((box) => {
+  const colorInput = box.querySelector("input[type='color']");
+  const hexInput = box.querySelector("input[type='text']");
+  hexInput.addEventListener('input', ({ target }) => {
+    if (/^#([0-9A-Fa-f]{6})$/.test(target.value)) {
+      syncColorInputs(colorInput, hexInput, target.value);
+      updateTextStyle();
+      updateBackground();
+    }
+  });
+  colorInput.addEventListener('input', ({ target }) => {
+    syncColorInputs(colorInput, hexInput, target.value);
+    updateTextStyle();
+    updateBackground();
+  });
+});
+
 // 글자 색상 프리셋 버튼
 document.querySelectorAll('.textPreset').forEach((button) => {
   button.style.background = button.dataset.color;
   button.addEventListener('click', () => {
     textColorInput.value = button.dataset.color;
+    syncColorInputs(textColorInput, textColorHex, button.dataset.color);
     updateTextStyle();
   });
 });
@@ -138,19 +161,17 @@ document.querySelectorAll('.textPreset').forEach((button) => {
 const updateBgOptions = () => {
   const bgType = document.querySelector("input[name='bgType']:checked").value;
   document.getElementById('solidOptions').style.display = bgType === 'solid' ? 'block' : 'none';
-  document.getElementById('gradientOptions').style.display =
-    bgType === 'gradient' ? 'block' : 'none';
+  document.getElementById('gradientOptions').style.display = bgType === 'gradient' ? 'block' : 'none';
   document.getElementById('imageOptions').style.display = bgType === 'image' ? 'block' : 'none';
   updateBackground();
 };
-document
-  .querySelectorAll("input[name='bgType']")
-  .forEach((radio) => radio.addEventListener('change', updateBgOptions));
+document.querySelectorAll("input[name='bgType']").forEach((radio) => radio.addEventListener('change', updateBgOptions));
 // 단색 프리셋 버튼
 document.querySelectorAll('.preset').forEach((button) => {
   button.style.background = button.dataset.color;
   button.addEventListener('click', () => {
-    bgColorInput.value = button.dataset.color;
+    solidColorInput.value = button.dataset.color;
+    syncColorInputs(solidColorInput, solidColorHex, button.dataset.color);
     updateBackground();
   });
 });
@@ -161,33 +182,16 @@ document.querySelectorAll('.gradientPreset').forEach((button) => {
   button.addEventListener('click', () => {
     gradColor1.value = colors[0];
     gradColor2.value = colors[1];
+    syncColorInputs(gradColor1, gradColor1Hex, colors[0]);
+    syncColorInputs(gradColor2, gradColor2Hex, colors[1]);
     updateBackground();
   });
 });
 // 그라디언트 색 뒤집기
 reverseGradientButton.addEventListener('click', () => {
-  [gradColor1.value, gradColor2.value] = [gradColor2.value, gradColor1.value];
+  syncColorInputs(gradColor1, gradColor1Hex, gradColor1.value);
+  syncColorInputs(gradColor2, gradColor2Hex, gradColor2.value);
   updateBackground();
-});
-
-// 색상 HEX
-const syncColorInputs = (colorInput, hexInput, newColor) => {
-  colorInput.value = newColor;
-  hexInput.value = newColor.toUpperCase();
-  updateTextStyle();
-  updateBackground();
-};
-document.querySelectorAll('.colorPickBox').forEach((box) => {
-  const colorInput = box.querySelector("input[type='color']");
-  const hexInput = box.querySelector("input[type='text']");
-  hexInput.addEventListener('input', ({ target }) => {
-    if (/^#([0-9A-Fa-f]{6})$/.test(target.value)) {
-      syncColorInputs(colorInput, hexInput, target.value);
-    }
-  });
-  colorInput.addEventListener('input', ({ target }) => {
-    syncColorInputs(colorInput, hexInput, target.value);
-  });
 });
 
 //초기 실행
