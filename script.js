@@ -59,8 +59,7 @@ const updateImageAlign = () => {
 
 // 발췌 비율 업데이트
 const updateCaptureHeight = () => {
-  document.getElementById('capture').style.height =
-    document.querySelector("input[name='markType']:checked").value + 'px';
+  document.getElementById('capture').style.aspectRatio = document.querySelector("input[name='markType']:checked").value;
 };
 
 //이벤트 리스너
@@ -108,7 +107,7 @@ function getFormattedTimestamp() {
 // 이미지 저장
 function saveImageJPG() {
   window.scrollTo(0, 0);
-  html2canvas(decoratedDiv, { backgroundColor: null, scale: 4 / 3 }).then((canvas) => {
+  html2canvas(decoratedDiv, { backgroundColor: null, scale: 864 / decoratedDiv.clientWidth }).then((canvas) => {
     const link = document.createElement('a');
     link.download = `bookmark${getFormattedTimestamp()}.jpg`;
     link.href = canvas.toDataURL('image/jpeg');
@@ -117,7 +116,7 @@ function saveImageJPG() {
 }
 function saveImagePNG() {
   window.scrollTo(0, 0);
-  html2canvas(decoratedDiv, { backgroundColor: null, scale: 4 / 3 }).then((canvas) => {
+  html2canvas(decoratedDiv, { backgroundColor: null, scale: 864 / decoratedDiv.clientWidth }).then((canvas) => {
     const link = document.createElement('a');
     link.download = `bookmark${getFormattedTimestamp()}.png`;
     link.href = canvas.toDataURL('image/png');
