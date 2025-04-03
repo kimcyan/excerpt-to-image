@@ -59,7 +59,7 @@ button {
   justify-content: center;
 }
 .textInputBox {
-  padding: min(33px, 5.092vw) min(42px, 6.481vw);
+  padding: max(13.647px, min(33px, 5.092vw)) max(17.369px, min(42px, 6.481vw));
   overflow: hidden;
 }
 #textInput {
@@ -191,12 +191,12 @@ button {
   background-color: #1461bd;
 }
 #textSource {
-  padding-top: min(15px, 2.3148vw);
+  padding-top: max(6.204px, min(15px, 2.3148vw));
   color: #ffffff;
   background: transparent;
   font-family: 'Noto Sans KR', serif;
   line-height: 1.7em;
-  font-size: min(22.5px, 3.472vw);
+  font-size: max(9.30496px, min(22.5px, 3.472vw));
   font-weight: 200;
 }
 #textSource div {
@@ -250,5 +250,10 @@ button {
   }
   #capture {
     width: 100%;
+  }
+}
+@media screen and (max-width: 448px) {
+  .gradColorBox {
+    flex-direction: column;
   }
 }
