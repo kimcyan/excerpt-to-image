@@ -86,8 +86,11 @@ button {
 }
 .optbox2 {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 14px;
+}
+.optbox2 span {
+  min-width: 72px;
 }
 .optbox2 label {
   display: flex;
@@ -96,8 +99,13 @@ button {
   gap: 4px;
   cursor: pointer;
 }
+.optList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
 .optBoxFlex {
-  padding: 12px 10px 10px 84px;
+  padding: 12px 0 10px;
   display: flex;
   gap: 12px;
   align-items: flex-start;
