@@ -92,8 +92,9 @@ button {
   align-items: flex-start;
   gap: 14px;
 }
-.optbox2 span {
+.optbox2 span:first-child {
   min-width: 72px;
+  font-weight: 500;
 }
 .optbox2 label {
   display: flex;
