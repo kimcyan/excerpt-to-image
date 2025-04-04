@@ -83,14 +83,21 @@ button {
 #optionContainer {
   display: flex;
   flex-direction: column;
-  gap: 24px;
   text-align: left;
-  padding: 32px 40px;
+  padding: 32px 20px;
 }
 .optbox2 {
   display: flex;
   align-items: flex-start;
   gap: 14px;
+  padding: 12px 10px;
+  border-top: 1px solid #eee;
+}
+.optbox2:first-child {
+  border-top: none;
+}
+.optbox1 {
+  border-top: 1px solid #eee;
 }
 .optbox2 span:first-child {
   min-width: 72px;
@@ -239,7 +246,7 @@ button {
     align-items: center;
   }
   #optionContainer {
-    padding-inline: 10px;
+    padding-inline: 0;
     padding-bottom: 0;
   }
   .optBoxFlex {
@@ -250,6 +257,12 @@ button {
   }
 }
 @media screen and (max-width: 648px) {
+  #mainContainer {
+    font-size: 16px;
+  }
+  .greyText {
+    font-size: 14px;
+  }
   .siteDesc {
     text-align: left;
   }
